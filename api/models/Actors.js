@@ -1,5 +1,5 @@
 /**
- * Films.js
+ * Actors.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -13,18 +13,13 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    title: {
+    name: {
       type: 'string',
-      description: 'Description of the film',
       required: true
     },
-    released: {
-      type: 'number',
-      description: 'A year the film released'
-    },
-    tagline: {
-      type: 'string',
-      description: 'A tagline of the film'
+
+    born: {
+      type: 'number'
     }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
