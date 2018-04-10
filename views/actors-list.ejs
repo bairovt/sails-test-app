@@ -1,0 +1,30 @@
+<h1 class="display-5">Actors</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Born</th>
+      <th>actions <a href="/actors/add" class="btn btn-success">Add Actor</a></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% actors.forEach(function(actor) {%>
+      <tr>
+        <td><%= actor.id %></td>
+        <td>
+          <%= actor.name %>
+        </td>
+        <td><%= actor.born %></td>
+        <td>
+          <a href="/actors/edit/<%= actor.id %>" class="btn btn-primary">Edit</a>
+          <form action="/actors/delete/<%= actor.id %>" method="post" class="d-inline">
+            <input type="submit" value="Delete" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+
+</table>
