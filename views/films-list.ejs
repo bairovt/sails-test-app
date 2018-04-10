@@ -1,0 +1,24 @@
+<h1 class="display-4">Films</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title <small>with <em>tagline</em></small></th>
+      <th>Year</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% films.forEach(function(film) {%>
+      <tr>
+        <td><%= film.id %></td>
+        <td>
+          <%= film.title %>
+          <br><small><em><%= film.tagline %></em></small>
+        </td>
+        <td><%= film.released %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+
+</table>

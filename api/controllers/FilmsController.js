@@ -5,8 +5,11 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-module.exports = {
-  
+// module.exports = {
+//   list: async function (req, res) {
+//     // let allFilms = await Films.find();
+//     res.view('films-list');
+//   }
 
-};
+// };
 
