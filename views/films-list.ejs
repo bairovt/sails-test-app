@@ -5,6 +5,7 @@
       <th>#</th>
       <th>Title <small>with <em>tagline</em></small></th>
       <th>Year</th>
+      <th>actions</th>
     </tr>
   </thead>
 
@@ -17,6 +18,11 @@
           <br><small><em><%= film.tagline %></em></small>
         </td>
         <td><%= film.released %></td>
+        <td>
+          <form action="/films/delete/<%= film.id %>" method="post" class="d-inline">
+            <input type="submit" value="Delete" class="btn btn-danger">
+          </form>
+        </td>
       </tr>
     <% }) %>
   </tbody>
