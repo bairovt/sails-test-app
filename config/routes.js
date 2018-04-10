@@ -44,10 +44,12 @@ module.exports.routes = {
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
-  'GET /films/list':      {action: 'films/list'},
-  'GET /films/add':       {action: 'films/add'},
-  'POST /films/create':   {action: 'films/create'},
-  'POST /films/delete/:id':   {action: 'films/delete'}
+  'GET /films/list':              {action: 'films/list'},
+  'GET /films/add':               {action: 'films/add'},
+  'POST /films/create':           {action: 'films/create'},
+  'POST /films/delete/:id':       {action: 'films/delete'},
+  'GET /films/edit/:id':          {action: 'films/edit'},
+  'POST /films/update/:id':       {action: 'films/update'}
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
