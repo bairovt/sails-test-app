@@ -20,7 +20,8 @@ module.exports = {
     },
     released: {
       type: 'number',
-      description: 'A year the film released'
+      description: 'A year the film released',
+      allowNull: true
     },
     tagline: {
       type: 'string',

@@ -19,7 +19,8 @@ module.exports = {
     },
 
     born: {
-      type: 'number'
+      type: 'number',
+      allowNull: true
     }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗

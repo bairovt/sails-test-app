@@ -2,7 +2,8 @@
 
 module.exports = async function (req, res) {
   let id = req.params.id;
-  let {title, tagline, released} = req.body;
+  let {title, tagline} = req.body;
+  let released = req.body.released.trim() || null;
   await Films.update({id}, {title, tagline, released});
   res.redirect('/films/list');
 };
