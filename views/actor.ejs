@@ -1,0 +1,43 @@
+<h1 class="display-5 mb-5"><%= actor.name %></h1>
+
+<form method="POST" action="/actors/<%= actor.id%>/select-film" class="mb-5">
+  <div class="input-group">
+    <select class="custom-select" id="inputGroupSelect04" name="film_id">
+      <option disabled selected>Choose film</option>
+      <% films.forEach(function(film) {%>
+        <option value="<%= film.id %>"><%= film.title %></option>
+      <%})%>
+    </select>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">Select</button>
+    </div>
+  </div>
+</form>
+
+<h3 class="display-5">Acted in films:</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% actor.films.forEach(function(film) {%>
+      <tr>
+        <td><%= film.id %></td>
+        <td>
+          <a href="/films/<%= film.id %>"><%= film.title %></a>
+          <br><small><em><%= film.tagline %></em></small>
+        </td>
+        <td><%= film.released %></td>
+        <td>
+          <a href="/actors/<%= actor.id %>/deselect/<%= film.id %>" class="btn btn-warning">Deselect</a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
