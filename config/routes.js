@@ -66,6 +66,10 @@ module.exports.routes = {
   'GET /films/:id/deselect/:actor_id':          {action: 'films/deselect-actor'},
   'POST /films/:id/select-actor':               {action: 'films/select-actor'},
 
+  'GET /load/all':          {action: 'load/all'},
+  'GET /load/film/:id':     {action: 'load/film'},
+  'GET /load/actor/:id':    {action: 'load/actor'},
+
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
