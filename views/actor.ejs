@@ -9,7 +9,7 @@
       <%})%>
     </select>
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="submit">Select</button>
+      <button class="btn btn-outline-secondary" type="submit">Add</button>
     </div>
   </div>
 </form>
@@ -35,7 +35,7 @@
         </td>
         <td><%= film.released %></td>
         <td>
-          <a href="/actors/<%= actor.id %>/deselect/<%= film.id %>" class="btn btn-warning">Deselect</a>
+          <a href="/actors/<%= actor.id %>/deselect/<%= film.id %>" class="btn btn-warning">Remove</a>
         </td>
       </tr>
     <% }) %>

@@ -1,4 +1,95 @@
 <h1 class="display-5">Welcome</h1>
-<p class="mb-4">This is Sails Test App</p>
-<a href="/films/list" class="btn btn-light">View Films</a>
-<a href="/films/add" class="btn btn-light">Add Film</a>
+<p class="mb-4">This is a Sails Test App</p>
+
+<div class="mb-4">
+  <a href="/films/list" class="btn">View Films</a>
+  <a href="/films/add" class="btn">Add Film</a>
+  <a href="/actors/list" class="btn">View Actors</a>
+  <a href="/actors/add" class="btn">Add Actor</a>
+</div>
+
+<div id="vueapp">
+  <div class="container">
+    <div class="mb-4">
+      <a href="#" class="btn btn-info" @click.prevent="loadData">Load all data</a>
+    </div>
+    <div class="row">
+
+      <div class="col-sm">
+        <table class="table table-hover table-dark">
+          <thead>
+            <tr>
+              <th>Films</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="film in films" @click="loadFilm(film.id)" style="cursor: pointer">
+              <td>
+                <a :href="'/films/'+film.id">{{film.title}}</a>
+                <br><small><em>{{film.tagline}}</em></small>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-sm">
+        <table class="table table-hover table-dark">
+          <thead>
+            <tr>
+              <th>Actors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="actor in actors" @click="loadActor(actor.id)" style="cursor: pointer">
+              <td>
+                <a :href="'/actors/'+actor.id">{{actor.name}}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  var app = new Vue({
+    el: '#vueapp',
+    data: {
+      films: [],
+      actors: []
+    },
+    methods: {
+      loadData () {
+        axios.get('/load/all')
+        .then(resp => {
+          this.films = resp.data.films;
+          this.actors = resp.data.actors;
+        })
+        .catch(err => console.err);
+      },
+      loadFilm (filmId) {
+        axios.get('/load/film/'+filmId)
+        .then(resp => {
+          this.films = [resp.data];
+          this.actors = resp.data.actors;
+        })
+        .catch(err => console.err);
+      },
+      loadActor (actorId) {
+        axios.get('/load/actor/'+actorId)
+        .then(resp => {
+          this.actors = [resp.data];
+          this.films = resp.data.films;
+        })
+        .catch(err => console.err);
+      }
+    },
+    created () {
+      this.loadData();
+    }
+  })
+</script>
