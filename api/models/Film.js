@@ -26,7 +26,7 @@ module.exports = {
     tagline: {
       type: 'string',
       description: 'A tagline of the film'
-    }
+    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -37,6 +37,11 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
+    actors: {
+      collection: 'actor',
+      via: 'film',
+      through: 'actorfilm'
+    }
   },
 
 };
