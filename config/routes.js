@@ -50,6 +50,7 @@ module.exports.routes = {
   'POST /films/delete/:id':       {action: 'films/delete'},
   'GET /films/edit/:id':          {action: 'films/edit'},
   'POST /films/update/:id':       {action: 'films/update'},
+  'GET /films/:id':               {action: 'films/film'},
 
   'GET /actors/list':              {action: 'actors/list'},
   'GET /actors/add':               {action: 'actors/add'},
@@ -61,6 +62,9 @@ module.exports.routes = {
 
   'GET /actors/:id/deselect/:film_id':          {action: 'actors/deselect-film'},
   'POST /actors/:id/select-film':               {action: 'actors/select-film'},
+
+  'GET /films/:id/deselect/:actor_id':          {action: 'films/deselect-actor'},
+  'POST /films/:id/select-actor':               {action: 'films/select-actor'},
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
