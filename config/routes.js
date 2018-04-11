@@ -56,7 +56,11 @@ module.exports.routes = {
   'POST /actors/create':           {action: 'actors/create'},
   'POST /actors/delete/:id':       {action: 'actors/delete'},
   'GET /actors/edit/:id':          {action: 'actors/edit'},
-  'POST /actors/update/:id':       {action: 'actors/update'}
+  'POST /actors/update/:id':       {action: 'actors/update'},
+  'GET /actors/:id':               {action: 'actors/actor'},
+
+  'GET /actors/:id/deselect/:film_id':          {action: 'actors/deselect-film'},
+  'POST /actors/:id/select-film':               {action: 'actors/select-film'},
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
