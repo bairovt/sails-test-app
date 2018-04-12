@@ -51,8 +51,9 @@ module.exports.datastores = {
     // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
 
-    // adapter: 'sails-postgresql',
-    // url: 'postgresql://tumen:ultra@localhost:5432/sails-test',
+    adapter: 'sails-postgresql',
+    // url: 'postgresql://tumen:password@localhost:5432/sails_test',
+    url: 'postgresql://sails_test:sails_test@192.168.1.88:5432/sails_test',
 
   },
 
