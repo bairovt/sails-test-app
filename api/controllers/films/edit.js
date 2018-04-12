@@ -6,5 +6,5 @@ module.exports = async function (req, res) {
   if (!film) {
     return res.notFound(`Film with id ${id} not found`);
   }
-  res.view('edit-film', {film});
+  res.view('pages/edit-film', {film});
 };

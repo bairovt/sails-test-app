@@ -19,9 +19,9 @@
         </td>
         <td><%= film.released %></td>
         <td>
-          <a href="/films/edit/<%= film.id %>" class="btn btn-primary">Edit</a>
+          <a href="/films/edit/<%= film.id %>" class="btn btn-primary btn-sm">Edit</a>
           <form action="/films/delete/<%= film.id %>" method="post" class="d-inline">
-            <input type="submit" value="Delete" class="btn btn-danger">
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm">
           </form>
         </td>
       </tr>

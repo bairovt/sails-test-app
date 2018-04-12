@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = async function (req, res) {
-  res.view('add-actor');
+  res.view('pages/add-actor');
 };
