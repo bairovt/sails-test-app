@@ -71,6 +71,8 @@ module.exports = {
       *                                                                           *
       ****************************************************************************/
       // ssl: true,
+      adapter: 'sails-postgresql',
+      url: 'postgresql://sails_test:sails_test@localhost:5432/sails_test',
 
     },
 
